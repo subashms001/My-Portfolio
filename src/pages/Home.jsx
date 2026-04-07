@@ -36,7 +36,7 @@ export default function Home() {
   }, [charIndex, isDeleting, roleIndex]);
 
   return (
-    <section className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-20 lg:px-32 py-16 bg-gray-900 relative overflow-hidden gap-12 font-">
+    <section className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-20 lg:px-32 py-16 bg-gray-900 relative overflow-hidden gap-12">
       
 
       <div className="absolute w-72 h-72 bg-pink-500 rounded-full blur-3xl opacity-20 top-10 left-10"></div>
