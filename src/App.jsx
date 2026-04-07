@@ -10,7 +10,6 @@ import { useState } from 'react';
 
 
 function App() {
-  const [theme, setTheme] = useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light')
   
   return(
   <>
