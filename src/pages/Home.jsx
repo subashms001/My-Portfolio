@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+
 const roles = ["Frontend Developer", "Data Analyst", "ML Enthusiast"];
 
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
 
   useEffect(() => {
     const currentRole = roles[roleIndex];
-    const typingSpeed = isDeleting ? 100 : 300;
+    const typingSpeed = isDeleting ? 50 : 100;
 
     const timer = setTimeout(() => {
       if (!isDeleting) {
@@ -100,10 +101,10 @@ export default function Home() {
       </div>
 
 
-      <div className="flex-1 flex flex-col items-center justify-center  gap-6 md:min-w-[30%]">
+      <div className="flex-1 flex flex-col items-center justify-center  gap-6 md:min-w-[30%] mt-30 md:mt-0">
         
 
-        <div className="w-40 h-40 border-2 border-[#00D4AA] rounded-full flex justify-center items-center text-6xl">
+        <div className="w-40 h-40 border-2 border-[#00D4AA] rounded-full flex justify-center items-center text-6xl  ">
           🧑‍💻
         </div>
 
@@ -151,6 +152,8 @@ export default function Home() {
         
 
       </div>
+      
     </section>
+    
   );
 }
