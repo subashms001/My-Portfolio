@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+
 const roles = ["Frontend Developer", "Data Analyst", "ML Enthusiast"];
 
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
 
   useEffect(() => {
     const currentRole = roles[roleIndex];
-    const typingSpeed = isDeleting ? 100 : 300;
+    const typingSpeed = isDeleting ? 50 : 100;
 
     const timer = setTimeout(() => {
       if (!isDeleting) {
@@ -36,7 +37,7 @@ export default function Home() {
   }, [charIndex, isDeleting, roleIndex]);
 
   return (
-    <section className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-20 lg:px-32 py-16 bg-gray-900 relative overflow-hidden gap-12 font-">
+    <section className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-20 lg:px-32 py-16 bg-gray-900 relative overflow-hidden gap-12 ">
       
 
       <div className="absolute w-72 h-72 bg-pink-500 rounded-full blur-3xl opacity-20 top-10 left-10"></div>
@@ -100,10 +101,10 @@ export default function Home() {
       </div>
 
 
-      <div className="flex-1 flex flex-col items-center justify-center  gap-6 md:min-w-[30%]">
+      <div className="flex-1 flex flex-col items-center justify-center  gap-6 md:min-w-[30%] mt-30 md:mt-0">
         
 
-        <div className="w-40 h-40 border-2 border-[#00D4AA] rounded-full flex justify-center items-center text-6xl">
+        <div className="w-40 h-40 border-2 border-[#00D4AA] rounded-full flex justify-center items-center text-6xl  ">
           🧑‍💻
         </div>
 
@@ -151,6 +152,8 @@ export default function Home() {
         
 
       </div>
+      
     </section>
+    
   );
 }

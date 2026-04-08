@@ -31,9 +31,22 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex gap-8 text-white font-medium">
-          <Link to="/" className="hover:text-[#00D4AA]">
+          <a
+            href="/"
+            onClick={(e) => {
+              if (window.location.pathname === "/") {
+                e.preventDefault();
+
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                });
+              }
+            }}
+            className="hover:text-[#00D4AA]"
+          >
             Home
-          </Link>
+          </a>
           <Link to="/about" className="hover:text-[#00D4AA]">
             About
           </Link>
@@ -43,18 +56,37 @@ const Navbar = () => {
           <Link to="/skills" className="hover:text-[#00D4AA]">
             Skills
           </Link>
-          <Link to="/contact" className="hover:text-[#00D4AA]">
+          <a
+            href="/#contact"
+            onClick={(e) => {
+              if (window.location.pathname === "/") {
+                e.preventDefault();
+                document.getElementById("contact")?.scrollIntoView({
+                  behavior: "smooth",
+                });
+              }
+            }}
+            className="hover:text-[#00D4AA]"
+          >
             Contact
-          </Link>
+          </a>
         </div>
 
         <div className="hidden md:block">
-          <Link
-            to="/contact"
+          <a
+            href="/#contact"
             className="bg-purple-600 px-4 py-2 text-white rounded-xl shadow-[inset_0_0_2px_2px_rgba(255,255,255,0.6)] hover:scale-105 transition"
+            onClick={(e) => {
+              if (window.location.pathname === "/") {
+                e.preventDefault();
+                document.getElementById("contact")?.scrollIntoView({
+                  behavior: "smooth",
+                });
+              }
+            }}
           >
             Hire Me
-          </Link>
+          </a>
         </div>
         <img
           src={menu_icon}
@@ -65,8 +97,8 @@ const Navbar = () => {
       </div>
       <div
         className={`fixed top-0 right-0 h-full w-64 bg-black/30 backdrop-blur-md text-white z-50 p-6 flex flex-col gap-6
-        transform ${open ? "translate-x-0" : "translate-x-full"} transition-transform duration-300`} >
-
+        transform ${open ? "translate-x-0" : "translate-x-full"} transition-transform duration-300`}
+      >
         <img
           src={close_icon}
           alt=""
@@ -74,9 +106,23 @@ const Navbar = () => {
           onClick={() => setOpen(false)}
         />
 
-        <Link onClick={() => setOpen(false)} to="/">
+        <a
+          onClick={(e) => {
+            setOpen(false);
+
+            if (window.location.pathname === "/") {
+              e.preventDefault();
+
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }
+          }}
+          href="/"
+        >
           Home
-        </Link>
+        </a>
         <Link onClick={() => setOpen(false)} to="/about">
           About
         </Link>
@@ -86,17 +132,38 @@ const Navbar = () => {
         <Link onClick={() => setOpen(false)} to="/skills">
           Skills
         </Link>
-        <Link onClick={() => setOpen(false)} to="/contact">
-          Contact
-        </Link>
+        <a
+          onClick={(e) => {
+            setOpen(false);
+            if (window.location.pathname === "/") {
+              e.preventDefault();
 
-        <Link
-          to="/contact"
-          onClick={() => setOpen(false)}
+              document.getElementById("contact")?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }
+          }}
+          href="/#contact"
+        >
+          Contact
+        </a>
+
+        <a
+          href="/#contact"
+          onClick={(e) => {
+            setOpen(false);
+            if (window.location.pathname === "/") {
+              e.preventDefault();
+
+              document.getElementById("contact")?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }
+          }}
           className="mt-4 bg-purple-600 px-4 py-2 rounded-lg text-center"
         >
           Hire Me
-        </Link>
+        </a>
       </div>
     </>
   );
